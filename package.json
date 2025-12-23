@@ -4,7 +4,10 @@
   "description": "[link](https://github.com/felipeAguiarCode/node-ts-webapi-without-frameworks-podcast-menager)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "tsx src/server.ts",
+    "start:watch": "tsx watch src/server.ts",
+    "dist": "tsup src",
+    "run:dist": "npm run dist && node dist/server.js"
   },
   "keywords": [],
   "author": "",
