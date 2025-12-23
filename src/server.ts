@@ -4,11 +4,13 @@ import {getrListEpisodes} from "./controllers/podcast-controller";
 const port = process.env.PORT;
 
 const server = http.createServer(
-    (
+    async (
         req, 
         res
     ) => {
-        res.end("oi");
+        if (req.method === "GET") {
+            await getrListEpisodes(req, res);
+        }
     }
 );
 
