@@ -20,3 +20,5 @@ server.listen(
         console.log(`servidor iniciado na porta ${port}`);
     }
 );
+
+// current video: Chamada Para API Com Simuladores De Clients
