@@ -1,17 +1,19 @@
 import * as http from "http";
 
+const port = process.env.PORT;
+
 const server = http.createServer(
     (
         req, 
         res
     ) => {
-
+        res.end("oi");
     }
 );
 
 server.listen(
-    3333, 
+    port,
     () => {
-        console.log("servidor iniciado na porta 3333");
+        console.log(`servidor iniciado na porta ${port}`);
     }
 );
