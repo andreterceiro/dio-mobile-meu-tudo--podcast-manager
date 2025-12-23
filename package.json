@@ -1,0 +1,12 @@
+{
+  "name": "dio-mobile-meu-tudo--podcast-manager",
+  "version": "1.0.0",
+  "description": "[link](https://github.com/felipeAguiarCode/node-ts-webapi-without-frameworks-podcast-menager)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
