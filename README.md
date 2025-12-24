@@ -3,6 +3,11 @@
 [link](https://github.com/felipeAguiarCode/node-ts-webapi-without-frameworks-podcast-menager)
 
 
+# Observations
+
+Teacher used Thunder Client extension in VSCode. Please see the class "Chamada para API com simuladores de clients"
+
+
 ---
 
 
