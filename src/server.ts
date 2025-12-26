@@ -7,16 +7,16 @@ const port = process.env.PORT;
 
 const server = http.createServer(
     async (
-        req, 
-        res
+        request, 
+        response
     ) => {
-        const [baseUrl, queryString] = req.url?.split("?") ?? ["", ""];
-        if (req.method === HttpMethods.GET && baseUrl === Routes.LIST) {
-            await getListEpisodes(req, res);
+        const [baseUrl, queryString] = request.url?.split("?") ?? ["", ""];
+        if (request.method === HttpMethods.GET && baseUrl === Routes.LIST) {
+            await getListEpisodes(request, response);
         }
 
-        if (req.method === HttpMethods.GET && baseUrl === Routes.EPISODE) {
-            await getFilterEpisodes(req, res);
+        if (request.method === HttpMethods.GET && baseUrl === Routes.EPISODE) {
+            await getFilterEpisodes(request, response);
         }
     }
 );
