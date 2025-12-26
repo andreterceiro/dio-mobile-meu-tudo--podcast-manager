@@ -12,8 +12,7 @@ export const serviceFilterEpisodes = async (url: string | undefined): Promise<Fi
     const data = await repositoryPodcast(podcastName);
 
     responseFormat.body = data;
-    if (data.length !== 0
-        ) {
+    if (data.length !== 0) {
         responseFormat.statusCode = HttpStatusCodes.OK;
     } else {
         responseFormat.statusCode = HttpStatusCodes.NO_CONTENT;
