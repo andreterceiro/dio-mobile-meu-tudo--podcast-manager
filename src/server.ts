@@ -1,7 +1,4 @@
 import * as http from "http";
-import {getListEpisodes, getFilterEpisodes} from "./controllers/podcast-controller";
-import { Routes } from "./routes/routes";
-import { HttpMethods } from "./utils/http-methods";
 import { app } from "./app";
 
 const port = process.env.PORT;
