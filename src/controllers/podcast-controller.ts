@@ -2,10 +2,10 @@ import {IncomingMessage, ServerResponse} from "http";
 import {serviceListEpisodes} from "../services/list-episodes-service";
 import {serviceFilterEpisodes} from "../services/filter-episodes-service";
 import { ContentType } from "../utils/content-type";
-import { FilterPodcastModel } from "../models/filter-podcast-model";
+import { PodcastTransferModel } from "../models/podcast-transfer-model";
 
 export const getListEpisodes  = async (req: IncomingMessage, res: ServerResponse) => {
-    const response: FilterPodcastModel = await serviceListEpisodes();
+    const response: PodcastTransferModel = await serviceListEpisodes();
     res.writeHead(response.statusCode, {'Content-type': ContentType.JSON});
     res.end(
         JSON.stringify(
@@ -15,7 +15,7 @@ export const getListEpisodes  = async (req: IncomingMessage, res: ServerResponse
 }
 
 export const getFilterEpisodes = async (req: IncomingMessage, res: ServerResponse) => {
-    const response: FilterPodcastModel = await serviceFilterEpisodes(req.url);
+    const response: PodcastTransferModel = await serviceFilterEpisodes(req.url);
     console.log(response);
     res.writeHead(response.statusCode, {'Content-type': ContentType.JSON});
     res.end(
