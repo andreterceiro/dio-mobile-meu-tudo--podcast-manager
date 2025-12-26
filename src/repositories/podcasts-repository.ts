@@ -4,7 +4,7 @@ import Podcast from "../models/Podcast";
 
 const pathData = _path.join(__dirname, "../repositories/podcasts.json");
 
-export const repositoryPosdcast = async (podcastName?: string): Promise<Podcast[]> => {
+export const repositoryPodcast = async (podcastName?: string): Promise<Podcast[]> => {
     const rawdata = fs.readFileSync(pathData);
     let jsonFile = JSON.parse(rawdata.toString());
 
