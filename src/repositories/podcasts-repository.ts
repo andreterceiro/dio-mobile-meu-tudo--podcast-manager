@@ -11,7 +11,7 @@ export const repositoryPosdcast = async (podcastName?: string): Promise<Podcast[
     if (podcastName) {
         jsonFile = jsonFile.filter(
             (podcastEntry: Podcast) => {
-                podcastEntry.podcastName === podcastName;
+                return podcastEntry.podcastName == podcastName;
             }
         );
     }
