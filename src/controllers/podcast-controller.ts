@@ -1,5 +1,6 @@
 import {IncomingMessage, ServerResponse} from "http";
 import {serviceListEpisodes} from "../services/list-episodes-service";
+import {serviceFilterEpisodes} from "../services/filter-episodes-service";
 
 export const getrListEpisodes  = async (req: IncomingMessage, res: ServerResponse) => {
     res.writeHead(200, {'Content-type': 'application/json'});
@@ -8,4 +9,14 @@ export const getrListEpisodes  = async (req: IncomingMessage, res: ServerRespons
             await serviceListEpisodes()
         )
     );
+}
+
+export const getFilterEpisodes = async (req: IncomingMessage, res: ServerResponse) => {
+    const content = await serviceFilterEpisodes("flow");
+    res.writeHead(200, {'Content-type': 'application/json'});
+    res.end(
+        JSON.stringify(
+            content
+        )
+    )
 }
