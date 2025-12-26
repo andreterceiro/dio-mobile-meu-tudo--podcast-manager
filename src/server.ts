@@ -1,5 +1,5 @@
 import * as http from "http";
-import {getrListEpisodes} from "./controllers/podcast-controller";
+import {getrListEpisodes, getFilterEpisodes} from "./controllers/podcast-controller";
 
 const port = process.env.PORT;
 
@@ -8,8 +8,12 @@ const server = http.createServer(
         req, 
         res
     ) => {
-        if (req.method === "GET") {
+        if (req.method === "GET" && req.url === "/api/list") {
             await getrListEpisodes(req, res);
+        }
+
+        if (req.method === "GET" && req.url === "/api/episode") {
+            await getFilterEpisodes(req, res);
         }
     }
 );
